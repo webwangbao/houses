@@ -1,0 +1,86 @@
+2018-05-23 18:47:44.286 [registrationTask1] ERROR [org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler:37] registrationTask1cid - Unexpected error occurred invoking async method 'public void com.webwangbao.house.biz.service.MailService.sendMail(java.lang.String,java.lang.String,java.lang.String)'.
+org.springframework.mail.MailSendException: Mail server connection failed; nested exception is com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.163.com, 25; timeout -1;
+  nested exception is:
+	java.net.UnknownHostException: smtp.163.com. Failed messages: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.163.com, 25; timeout -1;
+  nested exception is:
+	java.net.UnknownHostException: smtp.163.com
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:432) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:307) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:296) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.webwangbao.house.biz.service.MailService.sendMail(MailService.java:73) ~[classes/:?]
+	at com.webwangbao.house.biz.service.MailService$$FastClassBySpringCGLIB$$67bbc0f4.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor$1.call(AsyncExecutionInterceptor.java:115) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266) ~[?:1.8.0_161]
+	at java.util.concurrent.FutureTask.run(FutureTask.java) ~[?:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_161]
+Caused by: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.163.com, 25; timeout -1
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2118) ~[javax.mail-1.5.6.jar:1.5.6]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:712) ~[javax.mail-1.5.6.jar:1.5.6]
+	at javax.mail.Service.connect(Service.java:366) ~[javax.mail-1.5.6.jar:1.5.6]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:501) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:421) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 15 more
+Caused by: java.net.UnknownHostException: smtp.163.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184) ~[?:1.8.0_161]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_161]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_161]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_161]
+	at java.net.Socket.connect(Socket.java:538) ~[?:1.8.0_161]
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:331) ~[javax.mail-1.5.6.jar:1.5.6]
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:238) ~[javax.mail-1.5.6.jar:1.5.6]
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2084) ~[javax.mail-1.5.6.jar:1.5.6]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:712) ~[javax.mail-1.5.6.jar:1.5.6]
+	at javax.mail.Service.connect(Service.java:366) ~[javax.mail-1.5.6.jar:1.5.6]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:501) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:421) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 15 more
+2018-05-23 18:49:04.221 [registrationTask1] ERROR [org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler:37] registrationTask1cid - Unexpected error occurred invoking async method 'public void com.webwangbao.house.biz.service.MailService.sendMail(java.lang.String,java.lang.String,java.lang.String)'.
+org.springframework.mail.MailSendException: Mail server connection failed; nested exception is com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.163.com, 25; timeout -1;
+  nested exception is:
+	java.net.UnknownHostException: smtp.163.com. Failed messages: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.163.com, 25; timeout -1;
+  nested exception is:
+	java.net.UnknownHostException: smtp.163.com
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:432) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:307) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:296) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.webwangbao.house.biz.service.MailService.sendMail(MailService.java:73) ~[classes/:?]
+	at com.webwangbao.house.biz.service.MailService$$FastClassBySpringCGLIB$$67bbc0f4.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor$1.call(AsyncExecutionInterceptor.java:115) ~[spring-aop-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266) ~[?:1.8.0_161]
+	at java.util.concurrent.FutureTask.run(FutureTask.java) ~[?:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_161]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_161]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_161]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_161]
+Caused by: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.163.com, 25; timeout -1
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2118) ~[javax.mail-1.5.6.jar:1.5.6]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:712) ~[javax.mail-1.5.6.jar:1.5.6]
+	at javax.mail.Service.connect(Service.java:366) ~[javax.mail-1.5.6.jar:1.5.6]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:501) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:421) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 15 more
+Caused by: java.net.UnknownHostException: smtp.163.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184) ~[?:1.8.0_161]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_161]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_161]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_161]
+	at java.net.Socket.connect(Socket.java:538) ~[?:1.8.0_161]
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:331) ~[javax.mail-1.5.6.jar:1.5.6]
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:238) ~[javax.mail-1.5.6.jar:1.5.6]
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2084) ~[javax.mail-1.5.6.jar:1.5.6]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:712) ~[javax.mail-1.5.6.jar:1.5.6]
+	at javax.mail.Service.connect(Service.java:366) ~[javax.mail-1.5.6.jar:1.5.6]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:501) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:421) ~[spring-context-support-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	... 15 more
