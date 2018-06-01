@@ -181,7 +181,10 @@ public class UserController {
     modelMap.put("email", username);
     return "/user/accounts/remember";
   }
-  
+  /**
+   * 重置
+   * 
+   */
   @RequestMapping("accounts/reset")
   public String reset(String key,ModelMap modelMap){
     String email = userService.getResetEmail(key);
